@@ -1,0 +1,52 @@
+﻿<Window x:Class="Diagram_Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diagram_Generator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FF7A7D91" Offset="0.058"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <GroupBox x:Name="SettingsGroupBox" Header="Settings" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" Height="195.96" Width="268.697" Foreground="Black" Background="Beige" BorderBrush="{x:Null}" FontWeight="Bold" FontFamily="Tw Cen MT" FontStyle="Italic">
+            <Grid Margin="0,0,-2,-1">
+                <Label x:Name="DTLbl" Content="Diagram title" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" Margin="10,0,0,0"/>
+                <TextBox x:Name="DTTxt" Height="23" Margin="101.697,2.96,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Diagram1"/>
+                <TextBox x:Name="XITxtx" Margin="0,82.04,57,0" TextWrapping="Wrap" HorizontalAlignment="Right" Width="39" Height="23" VerticalAlignment="Top"/>
+                <TextBox x:Name="YITxt" Margin="0,82.04,10,0" TextWrapping="Wrap" HorizontalAlignment="Right" Width="42" Height="23" VerticalAlignment="Top"/>
+                <Label x:Name="NODLbl" Content="Number of divisions" HorizontalAlignment="Left" Margin="41.19,50.04,0,0" Height="26" VerticalAlignment="Top"/>
+                <Label x:Name="ILbl" Content="Interval value" Margin="77.323,78.04,101,0" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
+                <Label x:Name="XALbl" Content="X" Margin="0,29.08,67.703,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <Label x:Name="YALbl" Content="Y" Margin="0,29.08,22.703,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <TextBox x:Name="XNODTxt" Margin="0,54.04,57,0" TextWrapping="Wrap" HorizontalAlignment="Right" Width="39" Height="23" VerticalAlignment="Top"/>
+                <TextBox x:Name="YNODTxt" Margin="0,54.04,10,0" TextWrapping="Wrap" HorizontalAlignment="Right" Width="42" Height="23" VerticalAlignment="Top"/>
+                <Button x:Name="OkBtn" Content="OK" HorizontalAlignment="Left" Margin="15,0,0,42.8" VerticalAlignment="Bottom" Width="77" Click="OkBtn_Click"/>
+                <Button x:Name="CancelBtn" Content="Cancel" Margin="102,0,10.8,42.8" VerticalAlignment="Bottom" Height="16" Click="CancelBtn_Click"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="PointsGroupBox" Header="Add point" HorizontalAlignment="Left" Margin="10,229,0,0" Width="269" BorderBrush ="Black" Background="Beige" FontWeight="Bold" FontFamily="Tw Cen MT" FontStyle="Italic" IsEnabled="False">
+            <Grid Margin="0,0,-2,-2.92">
+                <Button x:Name="AddBtn" Content="Add" Margin="128.697,66,10,0" VerticalAlignment="Top" Click="AddBtn_Click"/>
+                <TextBox x:Name="XCTxt" Height="23" Margin="128.697,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox x:Name="YCTxt" Height="23" Margin="128.697,38,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <Label x:Name="XCLbl" Content="X-coordinate" HorizontalAlignment="Left" Margin="45.273,6,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="YCLbl" Content="Y-coordinate" HorizontalAlignment="Left" Margin="45.273,34,0,0" VerticalAlignment="Top"/>
+                <ListBox x:Name="PointsListBox" Margin="129,91,10.8,18.92"/>
+                <Label x:Name="PLbl" Content="Points" HorizontalAlignment="Left" Margin="81.533,90.96,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="XCheckBox" Content="Sort In X" HorizontalAlignment="Left" Margin="62,114,0,0" VerticalAlignment="Top" Checked="XDirChecked" FontFamily="Tw Cen MT" FontWeight="Bold" FontStyle="Italic"/>
+                <CheckBox x:Name="YCheckBox" Content="Sort in Y" HorizontalAlignment="Left" Margin="62,133,0,0" VerticalAlignment="Top" Checked="YCheckBoxCheched" FontFamily="Tw Cen MT" FontWeight="Bold" FontStyle="Italic"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="DiagramGroupBox" Header="Diagram" Margin="284,28,9.6,56" BorderBrush="#FF003F64" FontWeight="Bold" FontFamily="Tw Cen MT" FontStyle="Italic">
+            <Canvas x:Name="DiagramCanvas" Height="317" VerticalAlignment="Top" Margin="0,0,-2,-1.8" HorizontalAlignment="Left" Width="490" Background="Cornsilk" MouseMove="CanvasMouseMove"/>
+        </GroupBox>
+        <Button  x:Name="ClearBtn" Content="Clear Diagram"  Height="31" Click="ClearBtn_Click" HorizontalAlignment="Left" Margin="284,369,0,0" VerticalAlignment="Top" Width="89" Background="Cornsilk"/>
+
+    </Grid>
+</Window>
